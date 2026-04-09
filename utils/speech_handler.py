@@ -2,7 +2,7 @@ import speech_recognition as sr
 import requests
 import time
 
-SERVER = "http://127.0.0.1:5000"
+SERVER = "https://voice-excel-update-npvj-fcybtqjx7-rajukushwaha-svgs-projects.vercel.app/""
 
 running = False
 
