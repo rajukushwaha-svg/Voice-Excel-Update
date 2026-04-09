@@ -1,0 +1,6 @@
+pandas
+openpyxl
+PyQt5
+SpeechRecognition
+PyAudio
+vosk

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Voice Excel</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<h2>🎤 Voice Excel</h2>
+
+<button onclick="startVoice()">🎤 Start Voice</button>
+<button onclick="stopVoice()">⛔ Stop Voice</button>
+<button onclick="downloadExcel()">📥 Excel</button>
+<button onclick="downloadCSV()">📥 CSV</button>
+
+<br><br>
+
+<div class="status-panel">
+    <div class="status-row">
+        <strong>Status:</strong>
+        <span id="voiceState">idle</span>
+    </div>
+    <div class="status-row">
+        <strong>Message:</strong>
+        <span id="voiceMessage">Select a cell, then start voice.</span>
+    </div>
+    <div class="status-row">
+        <strong>Recognized Text:</strong>
+        <span id="voiceText">-</span>
+    </div>
+    <div class="status-row">
+        <strong>Target Cell:</strong>
+        <span id="voiceCell">-</span>
+    </div>
+</div>
+
+<table id="excelTable">
+    <thead>
+        <tr>
+            {% for col in columns %}
+                <th>{{ col }}</th>
+            {% endfor %}
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for i in range(data|length) %}
+        <tr>
+            {% for j in range(columns|length) %}
+            <td contenteditable="true"
+                data-row="{{ i }}"
+                data-col="{{ j }}"
+                onclick="selectCell(this)"
+                onfocus="beginEdit(this)"
+                onblur="saveEditedCell(this)"
+                onkeydown="handleCellKeydown(event, this)">
+                {{ data[i][j] }}
+            </td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<script src="/static/script.js"></script>
+
+</body>
+</html>

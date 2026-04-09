@@ -1,0 +1,55 @@
+body {
+    font-family: Arial;
+    padding: 20px;
+}
+
+.status-panel {
+    width: fit-content;
+    min-width: 340px;
+    margin-bottom: 16px;
+    padding: 12px 14px;
+    border: 1px solid #c9d7f2;
+    background: #f5f9ff;
+    border-radius: 8px;
+}
+
+.status-row {
+    margin-bottom: 6px;
+}
+
+.status-row:last-child {
+    margin-bottom: 0;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    min-width: 120px;
+}
+
+td {
+    cursor: pointer;
+}
+
+.selected {
+    background-color: #cce5ff;
+    border: 2px solid blue;
+}
+
+button {
+    padding: 8px 12px;
+    margin: 5px;
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0056b3;
+}
